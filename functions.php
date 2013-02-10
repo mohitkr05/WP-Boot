@@ -40,6 +40,11 @@ function wpboot_setup() {
 	 * Custom template tags for this theme.
 	 */
 	require( get_template_directory() . '/inc/template-tags.php' );
+	
+	/**
+	 * Custom hooks.
+	 */
+	require( get_template_directory() . '/inc/hooks.php' );
 
 	/**
 	 * Custom functions that act independently of the theme templates
