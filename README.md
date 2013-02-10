@@ -21,6 +21,12 @@ WordPress + Bootstrap
 
 
 
+Version 0.2
+-------------------
+Added Hooks defined in inc/hooks.php
+Added .well class to the sidebar
+Added functions in inc/extra.php
+	
 
 Version 0.1
 ======================

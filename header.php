@@ -1,12 +1,15 @@
 <?php
 /**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="main">
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for displaying the header 
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -49,9 +52,11 @@
 			</div>
 		</div> <!-- Navbar fixed top -->
 	</div> <!-- end #inner-header -->
+	<?php wpboot_header(); ?>	
 </header> <!-- end header -->
 
 <!------------------------------------Header ends ------------------------------->
-
+<?php wpboot_main_before(); ?>
 <div id="main" class="site-main row-fluid">
 
+		<?php wpboot_main(); ?>

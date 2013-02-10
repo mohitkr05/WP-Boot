@@ -36,21 +36,35 @@ margin:0 auto;
 
 /* Typography */
 
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+
 h1,h2,h3,h4 {
 font-weight: normal;
 }
 
 
-h3.description{
+h1.entry-title{
 border-bottom: 1px solid #33B8D4;
 color: #2C3439;
-font-size: 18px;
+font-size: 42px;
 font-weight: bold;
-text-align:center;
-line-height: 25px;
+text-align:left;
+line-height: 48px;
 margin: 0 0 20px;
 padding: 0 0 6px;
 }
+
 
 a {
 color: #0088CC;
@@ -61,6 +75,17 @@ color: #005580;
 text-decoration:none;
 }
 
+a[rel="external"]{
+
+}
+
+a[rel="category"]{
+
+}
+
+a[rel="bookmark"]{
+
+}
 
 /* Bootstrap to WordPress Customizations */
 
@@ -104,9 +129,7 @@ input, textarea, select, .uneditable-input {
 	width: 100px;
 }
 
-#content{
-	padding: 10px 0 0;
-}
+
 
 .more-link{
 	white-space: nowrap;
@@ -130,15 +153,10 @@ input, textarea, select, .uneditable-input {
 /* Widget */
 
 .widget-area{
-background: #F9F7EF url(img/texture.png) top repeat;
-border: 1px solid #F9F7EF;
-border-bottom-left-radius: 24px;
-color: #594939;
-padding: 0 0 18px 12px;
-text-shadow: 1px 1px 1px #FFFFFF;
+
 }
 
-h3.widget-title{
+h1.widget-title{
 border-bottom:1px dotted #999;
 color: #594939;
 font-size: 22px;
@@ -188,7 +206,8 @@ ol.commentlist li.parent { border-left:5px solid #111; }
 ol.commentlist li.thread-alt { }
 ol.commentlist li.thread-even {}
 ol.commentlist li.thread-odd {}
-
+ol.commentlist li.pingback {}
+ol.commentlist li.pingback a {color:#000;font-size:14px;}
 
 /* Nav */
 
@@ -212,28 +231,6 @@ ol.commentlist li.thread-odd {}
 }
 
 
-/* Logo */
-
-#circle {
-margin:0 auto;
-background: #17AECE;
-width: 120px;
-height: 120px;
-border-radius: 50%;
-}
-
-.text {
-font-family: Forum;
-font-size:22px;
-color:#fff;
-line-height:22px;
-margin:0;
-padding:40px 0 0 0;
-text-align:center;
-}
-
-
-
 /* Mozilla based browsers */
 ::-moz-selection {
 background-color: #005580;
@@ -244,5 +241,246 @@ color: #fff;
 ::selection {
 background-color: #005580;
 color: #fff;
+}
+
+
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+
+
+/* =Content
+----------------------------------------------- */
+
+
+#content{
+	padding: 10px 0 0;
+}
+
+.content-area{
+
+}
+
+
+.site-content {
+
+}
+
+#content[role="main"] {
+
+}
+
+.sticky {
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.entry-meta {
+	clear: both;
+}
+
+.byline {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+
+h1.entry-title{
+
+}
+
+.entry-meta{
+
+}
+
+
+.entry-content {
+
+}
+
+
+
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content .site-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+.site-content .nav-previous {
+	float: left;
+	width: 50%;
+}
+.site-content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+#searchsubmit {
+	display: none;
+}
+
+/* =Infinite Scroll
+----------------------------------------------- */
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll #nav-above, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll #nav-below,
+.infinite-scroll.neverending #colophon { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending #colophon {
+	display: block;
+}
+
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+	max-width: 100%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+.site-content .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+.site-content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-content .gallery dd {
+	margin: 0;
+}
+.site-content .gallery-columns-4 .gallery-item {
+}
+.site-content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* Links */
+a {
+	color: royalblue;
+}
+a:visited {
+	color: purple;
+}
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
 }
 

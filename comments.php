@@ -1,15 +1,15 @@
 <?php
 /**
- * The template for displaying Comments.
- *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to wpboot_comment() which is
- * located in the functions.php file.
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for displaying comments
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 ?>
 
 <?php

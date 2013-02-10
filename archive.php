@@ -1,16 +1,19 @@
 <?php
+
 /**
- * The template for displaying Archive pages.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for displaying archives
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
 
 get_header(); ?>
 
-		<section id="primary" class="content-area">
+		<section id="primary" class="content-area span8">
 			<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>

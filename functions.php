@@ -1,15 +1,20 @@
 <?php
 /**
- * wpboot functions and definitions
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The custom functions for WP Boot
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
- * @since wpboot 1.0
+ * @since wpboot 0.2
  */
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
@@ -27,7 +32,7 @@ if ( ! function_exists( 'wpboot_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * @since wpboot 1.0
+ * @since wpboot 0.2
  */
 function wpboot_setup() {
 
@@ -113,7 +118,7 @@ add_action( 'after_setup_theme', 'wpboot_register_custom_background' );
 /**
  * Register widgetized area and update sidebar with default widgets
  *
- * @since wpboot 1.0
+ * @since wpboot 0.2
  */
 function wpboot_widgets_init() {
 	register_sidebar( array(

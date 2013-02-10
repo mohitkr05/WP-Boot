@@ -1,14 +1,19 @@
 <?php
 /**
- * The Template for displaying all single posts.
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for generating the single post.
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
 
 get_header(); ?>
 
 		<div id="primary" class="content-area span8">
+			<?php wpboot_content_before(); ?>
 			<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -28,6 +33,8 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content .site-content -->
+			
+			<?php wpboot_content_after(); ?>
 		</div><!-- #primary .content-area -->
 
 <?php get_sidebar(); ?>

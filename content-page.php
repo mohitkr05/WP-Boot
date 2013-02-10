@@ -1,10 +1,15 @@
 <?php
 /**
- * The template used for displaying page content in page.php
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for displaying the page 
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -1,24 +1,24 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for <description>
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 
 get_header(); ?>
 
 		<div id="primary" class="content-area span8">
+			<?php wpboot_content_before(); ?>
 			<div id="content" class="site-content" role="main">
-
+				<?php wpboot_content(); ?>
 			<?php if ( have_posts() ) : ?>
-
+				
 				<?php wpboot_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
@@ -43,6 +43,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content .site-content -->
+			<?php wpboot_content_after(); ?>
 		</div><!-- #primary .content-area -->
 
 <?php get_sidebar(); ?>

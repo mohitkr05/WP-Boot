@@ -1,10 +1,14 @@
 <?php
 /**
- * Jetpack Compatibility File
- * See: http://jetpack.me/
- *
- * @package: wpboot
- */
+*
+* The template is used for infinite scroll
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
 
 /**
  * Add theme support for Infinite Scroll.

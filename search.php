@@ -1,16 +1,24 @@
 <?php
 /**
- * The template for displaying Search Results pages.
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for displaying the searched content 
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 
 get_header(); ?>
 
 		<section id="primary" class="content-area span8">
+			<?php wpboot_content_before(); ?>
+			
 			<div id="content" class="site-content" role="main">
-
+			<?php wpboot_content(); ?>
+			
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
@@ -35,6 +43,8 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content .site-content -->
+			
+			<?php wpboot_content_after(); ?>
 		</section><!-- #primary .content-area -->
 
 <?php get_sidebar(); ?>

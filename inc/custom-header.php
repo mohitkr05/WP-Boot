@@ -11,11 +11,17 @@
 			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 		</a>
 	<?php } // if ( ! empty( $header_image ) ) ?>
+/**
+*
+* The template is used for generating custom header
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
 
- *
- * @package wpboot
- * @since wpboot 1.0
- */
 
 /**
  * Setup the WordPress core custom header feature.
@@ -72,7 +78,7 @@ add_action( 'after_setup_theme', 'wpboot_custom_header_setup' );
  * @return stdClass All properties represent attributes of the curent header image.
  *
  * @package wpboot
- * @since wpboot 1.1
+ * @since wpboot 0.2
  */
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -92,7 +98,7 @@ if ( ! function_exists( 'wpboot_header_style' ) ) :
  *
  * @see wpboot_custom_header_setup().
  *
- * @since wpboot 1.0
+ * @since wpboot 0.2
  */
 function wpboot_header_style() {
 
@@ -133,7 +139,7 @@ if ( ! function_exists( 'wpboot_admin_header_style' ) ) :
  *
  * @see wpboot_custom_header_setup().
  *
- * @since wpboot 1.0
+ * @since wpboot 0.2
  */
 function wpboot_admin_header_style() {
 ?>
@@ -163,7 +169,7 @@ if ( ! function_exists( 'wpboot_admin_header_image' ) ) :
  *
  * @see wpboot_custom_header_setup().
  *
- * @since wpboot 1.0
+ * @since wpboot 0.2
  */
 function wpboot_admin_header_image() { ?>
 	<div id="headimg">

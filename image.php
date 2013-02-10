@@ -1,10 +1,14 @@
 <?php
 /**
- * The template for displaying image attachments.
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for displaying image
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
 
 get_header();
 ?>

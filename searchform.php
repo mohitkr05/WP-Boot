@@ -1,10 +1,15 @@
 <?php
 /**
- * The template for displaying search forms in wpboot
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for generating a search form
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 		<label for="s" class="assistive-text"><?php _e( 'Search', 'wpboot' ); ?></label>

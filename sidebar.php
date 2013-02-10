@@ -1,13 +1,18 @@
 <?php
 /**
- * The Sidebar containing the main widget areas.
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for generating sidebar
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 ?>
 		<div id="secondary" class="widget-area span4 well" role="complementary">
-			<?php do_action( 'before_sidebar' ); ?>
+			<?php wpboot_sidebar_before(); ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
 				<aside id="search" class="widget widget_search">

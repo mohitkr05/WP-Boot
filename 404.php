@@ -1,16 +1,22 @@
 <?php
+
 /**
- * The template for displaying 404 pages (Not Found).
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for displaying 404 error.
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
 
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+		<?php wpboot_content_before(); ?>
+		<div id="content" class="site-content span8" role="main">
+			<?php wpboot_content(); ?>
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'Oops! That page can&apos;t be found.', 'wpboot' ); ?></h1>
@@ -42,6 +48,9 @@ get_header(); ?>
 			</article><!-- #post-0 .post .error404 .not-found -->
 
 		</div><!-- #content .site-content -->
+		
+		<?php wpboot_content_after(); ?>
 	</div><!-- #primary .content-area -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

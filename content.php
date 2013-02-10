@@ -1,8 +1,15 @@
 <?php
 /**
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for the main content
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

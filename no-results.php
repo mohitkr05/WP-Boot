@@ -1,12 +1,15 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package wpboot
- * @since wpboot 1.0
- */
+*
+* The template is used for no results found in case of a search
+* 
+*		@package wpboot
+*		@since wpboot 0.2
+*		@author mohit
+*
+*
+**/
+
 ?>
 
 <article id="post-0" class="post no-results not-found">
