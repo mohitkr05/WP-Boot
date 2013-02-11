@@ -1,0 +1,32 @@
+
+Changelog
+
+
+
+
+
+
+Version 0.3
+------------------
+
+Added basic options panel 	- 	credit options-framework (http://wptheming.com/options-framework-theme/)
+Added Bootswatch themes 	-	credit http://bootswatch.com and http://320press.com/wpbs
+
+
+
+Version 0.2
+-------------------
+
+Added Hooks defined in inc/hooks.php
+Added .well class to the sidebar
+Added functions in inc/extra.php
+	
+
+Version 0.1
+-------------------
+
+Custom Walker Menu
+Fixed spans to meet bootstrap base CSS
+Fixed style.css
+
+

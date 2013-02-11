@@ -1,6 +1,6 @@
 /*
-Theme Name: WP BOOTS
-Theme URI: http://github.com/mohitkr05/awesome
+Theme Name: WP-BOOT
+Theme URI: http://github.com/mohitkr05/wp-boot
 Description: An Awesome WordPress theme framework
 Author: mohitkr05
 Author URI: http://kumarmohit.com/
@@ -13,14 +13,11 @@ License URI:http://www.gnu.org/licenses/gpl.html
 General comments (optional).
 */
 
-@import url(css/bootstrap.min.css);
-@import url(css/bootstrap-responsive.css);
-@import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
-
+/*@import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+*/
 
 body{
 margin:0;
-font-family:"Open Sans",Calibri,Candara,Arial,sans-serif;
 font-size:14px;
 line-height:20px;
 color:#555555;
@@ -56,7 +53,6 @@ font-weight: normal;
 
 h1.entry-title{
 border-bottom: 1px solid #33B8D4;
-color: #2C3439;
 font-size: 42px;
 font-weight: bold;
 text-align:left;
@@ -67,11 +63,9 @@ padding: 0 0 6px;
 
 
 a {
-color: #0088CC;
 text-decoration: none;
 }
 a:hover {
-color: #005580;
 text-decoration:none;
 }
 
@@ -158,7 +152,6 @@ input, textarea, select, .uneditable-input {
 
 h1.widget-title{
 border-bottom:1px dotted #999;
-color: #594939;
 font-size: 22px;
 margin: 12px 0;
 }
@@ -231,17 +224,6 @@ ol.commentlist li.pingback a {color:#000;font-size:14px;}
 }
 
 
-/* Mozilla based browsers */
-::-moz-selection {
-background-color: #005580;
-color: #fff;
-}
-
-/* Works in Safari */
-::selection {
-background-color: #005580;
-color: #fff;
-}
 
 
 
@@ -455,17 +437,7 @@ object {
 
 
 /* Links */
-a {
-	color: royalblue;
-}
-a:visited {
-	color: purple;
-}
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
-}
+
 
 /* Alignment */
 .alignleft {

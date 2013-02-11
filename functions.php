@@ -4,25 +4,12 @@
 * The custom functions for WP Boot
 * 
 *		@package wpboot
-*		@since wpboot 0.2
+*		@since wpboot 0.3
 *		@author mohit
 *
 *
 **/
 
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- * @since wpboot 0.2
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
-
-/*
- * Load Jetpack compatibility file.
- */
-require( get_template_directory() . '/inc/jetpack.php' );
 
 if ( ! function_exists( 'wpboot_setup' ) ) :
 /**
@@ -36,25 +23,97 @@ if ( ! function_exists( 'wpboot_setup' ) ) :
  */
 function wpboot_setup() {
 
+	/* 
+	* Constants : The Constants used througout the theme 
+	* @since- wpboot-0.3
+	*/
+	
+	
+	/* Sets the theme version number. */
+	define( 'WPBOOT_VERSION', 0.3 );
+
+	/* Sets the path to the theme directory. */
+	define( 'THEME_DIR', get_template_directory() );
+
+	/* Sets the path to the theme directory URI. */
+	define( 'THEME_URI', get_template_directory_uri() );
+
+	/* Sets the path to the admin directory. */
+	define( 'WPBOOT_ADMIN', trailingslashit( THEME_DIR ) . 'admin' );
+
+	/* Sets the path to the includes directory. */
+	define( 'WPBOOT_INCLUDES', trailingslashit( THEME_DIR ) . 'includes' );
+
+	/* Sets the path to the js directory. */
+	define( 'WPBOOT_IMAGE', trailingslashit( THEME_URI ) . 'img' );
+
+	/* Sets the path to the js directory. */
+	define( 'WPBOOT_CSS', trailingslashit( THEME_URI ) . 'css' );
+
+	/* Sets the path to the js directory. */
+	define( 'WPBOOT_JS', trailingslashit( THEME_URI ) . 'js' );
+	
+
+if ( !function_exists( 'optionsframework_init' ) ) {
+
+/*-----------------------------------------------------------------------------------*/
+/* Options Framework Theme
+/*-----------------------------------------------------------------------------------*/
+
+/* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
+
+if ( STYLESHEETPATH == TEMPLATEPATH ) {
+			define('OPTIONS_FRAMEWORK_URL', TEMPLATEPATH . '/includes/admin/');
+			define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/includes/admin/');
+	} else {
+			define('OPTIONS_FRAMEWORK_URL', STYLESHEETPATH . '/includes/admin/');
+			define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('stylesheet_directory') . '/includes/admin/');
+		}
+
+		require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
+
+	}
 	/**
-	 * Custom template tags for this theme.
+	 * Set the content width based on the theme's design and stylesheet.
+	 *
+	 * @since wpboot 0.2
 	 */
-	require( get_template_directory() . '/inc/template-tags.php' );
+	if ( ! isset( $content_width ) )
+		$content_width = 640; /* pixels */
+
+	
+	/*
+ 	* Load Jetpack compatibility file.
+	 */
+	require( trailingslashit( WPBOOT_INCLUDES ) . 'jetpack.php' );
+
+	/* Loads the template tags. */
+	
+	require( trailingslashit( WPBOOT_INCLUDES ) . 'template-tags.php' );
 	
 	/**
 	 * Custom hooks.
 	 */
-	require( get_template_directory() . '/inc/hooks.php' );
+	require( trailingslashit( WPBOOT_INCLUDES ) . 'hooks.php' );
 
 	/**
 	 * Custom functions that act independently of the theme templates
 	 */
-	require( get_template_directory() . '/inc/extras.php' );
+	require( trailingslashit( WPBOOT_INCLUDES ) . 'extras.php' );
 
 	/**
 	 * Customizer additions
 	 */
-	require( get_template_directory() . '/inc/customizer.php' );
+	require(  trailingslashit( WPBOOT_INCLUDES ) . 'customizer.php' );
+
+	/**
+	 * 
+	 * Load theme options
+	 * 
+	 */
+	
+	require(  trailingslashit( WPBOOT_INCLUDES ) . 'theme_options.php' );
+	 
 
 	/**
 	 * Make theme available for translation
