@@ -62,5 +62,6 @@
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'wpboot' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php wpboot_related_posts(); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

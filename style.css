@@ -1,5 +1,5 @@
 /*
-Theme Name: WP-BOOT
+Theme Name: forstudents
 Theme URI: http://github.com/mohitkr05/wp-boot
 Description: An Awesome WordPress theme framework
 Author: mohitkr05
@@ -16,6 +16,7 @@ General comments (optional).
 /*@import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
 */
 
+
 body{
 margin:0;
 font-size:14px;
@@ -29,6 +30,7 @@ padding-left:2em;
 .site-main{
 padding-top:50px;
 margin:0 auto;
+width:98%;
 }
 
 /* Typography */
@@ -151,9 +153,10 @@ input, textarea, select, .uneditable-input {
 }
 
 h1.widget-title{
-border-bottom:1px dotted #999;
+border-bottom:1px dotted #fff;
 font-size: 22px;
 margin: 12px 0;
+text-align:center;
 }
 
 
@@ -454,5 +457,23 @@ object {
 	clear: both;
 	display: block;
 	margin: 0 auto;
+}
+
+/* Footer Widgets */
+
+#footer-widgets {
+	width:98%;
+	background:#999;
+	color:#fff;
+	padding:5px 5px 5px 5px;
+}
+
+#footer-widgets p{
+	color:#fff;
+}
+
+#footer-widgets a{
+	color:#fff;
+	text-decoration:underline;
 }
 

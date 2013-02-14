@@ -27,29 +27,33 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// Test data
-	$test_array = array(
-		'one' => __('One', 'options_check'),
-		'two' => __('Two', 'options_check'),
-		'three' => __('Three', 'options_check'),
-		'four' => __('Four', 'options_check'),
-		'five' => __('Five', 'options_check')
+	
+	
+	$wpboot_background = array(
+		'color' => '',
+		'image' => '',
+		'repeat' => 'repeat',
+		'position' => 'top center',
+		'attachment'=>'scroll' 
+	);
+	
+	$wpboot_numbers = array(
+		'2' => __( 'Two', 'wpboot' ), 
+		'3' => __( 'Three', 'wpboot' ), 
+		'4' => __( 'Four', 'wpboot' ), 
+		'5' => __( 'Five', 'wpboot' ), 
+		'6' => __( 'Six', 'wpboot' ), 
+		'7' => __( 'Seven', 'wpboot' ), 
+		'8' => __( 'Eight', 'wpboot' ), 
+		'9' => __( 'Nine', 'wpboot' ), 
+		'10' => __( 'Ten', 'wpboot' ) 
+	);
+	
+	$wpboot_select = array(
+		'enable' => __( 'Enable', 'wpboot' ), 
+		'disable' => __( 'Disable', 'wpboot' ) 
 	);
 
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __('French Toast', 'options_check'),
-		'two' => __('Pancake', 'options_check'),
-		'three' => __('Omelette', 'options_check'),
-		'four' => __('Crepe', 'options_check'),
-		'five' => __('Waffle', 'options_check')
-	);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
-	);
 
 	// Background Defaults
 	$background_defaults = array(
@@ -123,6 +127,137 @@ function optionsframework_options() {
 	//Lets define the custom CSS urls and load it in our theme. Most of the themes are downloaded from Bootswatch.com
 	// Code credit - http://320press.com/wpbs
 	
+	$imagepath =  get_template_directory_uri() . '/img/layouts/';
+	$patternpath =  get_template_directory_uri() . '/img/bg/';
+		
+	$options = array();
+	
+	$options[] = array( 
+		'name' => __( 'General', 'wpboot' ),
+		'type' => 'heading'
+	);
+							
+	$options[] = array( 
+		'name' => __( 'Custom Logo', 'wpboot' ),
+		'desc' => __( 'Upload a logo for your website, or specify the image address of your online logo. (http://example.com/logo.png)', 'wpboot' ),
+		'id' => 'wpboot_custom_logo',
+		'type' => 'upload'
+	);
+								
+	$options[] = array( 
+		'name' => __( 'Custom Favicon', 'wpboot' ),
+		'desc' => __( 'Upload a favicon for your website, or specify the image address of your online favicon. (http://example.com/favicon.png)', 'wpboot' ),
+		'id' => 'wpboot_custom_favicon',
+		'type' => 'upload'
+	);
+							
+	$options[] = array( 
+		'name' => __( 'Custom CSS', 'wpboot' ),
+		'desc' => __( 'Quickly add some CSS to your theme by adding it to this block.', 'wpboot' ),
+		'id' => 'wpboot_custom_css',
+		'std' => '',
+		'type' => 'textarea'
+	); 
+						
+	$options[] = array( 
+		'name' => __( 'Header Code', 'wpboot' ),
+		'desc' => __( 'Add any custom script like the meta verification from various search engine. It will be inserted before the closing head tag of your theme', 'wpboot' ),
+		'id' => 'wpboot_header_code',
+		'type' => 'textarea'
+	); 	
+						
+	$options[] = array( 
+		'name' => __( 'Footer Code', 'wpboot' ),
+		'desc' => __( 'Add your analytic code or you can add any custom script here. It will be inserted before the closing body tag of your theme', 'wpboot' ),
+		'id' => 'wpboot_footer_code',
+		'type' => 'textarea'
+	); 		 	 
+						
+	$options[] = array( 
+		'name' => __( 'Iframe Blocker', 'wpboot' ),
+		'desc' => __( 'Iframe blocker is for block iframe to your site such as google image.', 'wpboot' ),
+		'id' => 'wpboot_iframe_blocker',
+		'std' => 'disable',
+		'type' => 'select',
+		'options' => $wpboot_select
+	);
+
+	$options[] = array( 
+		'name' => __(  'Disable credit links', 'wpboot' ),
+		'desc' => __(  'Are you sure want to disable the credit link for WordPress and theme author?', 'wpboot' ),
+		'id' => 'wpboot_credits',
+		'type' => 'checkbox'
+	);
+						
+	/* ============================== End General Settings ================================= */					
+	
+	$options[] = array( 
+		'name' => __( 'Typography', 'wpboot' ),
+		'type' => 'heading'
+	);
+
+	$options[] = array( 
+		'name' => __( 'Disable custom typography', 'wpboot' ),
+		'desc' => __( 'Disable custom typography and use theme defaults.', 'wpboot' ),
+		'id' => 'wpboot_disable_typography',
+		'std' => true,
+		'type' => 'checkbox' 
+	);
+
+	$options[] = array( 
+		'name' => __( 'Content typography', 'wpboot' ),
+		'desc' => __( 'This font is used for content text.', 'wpboot' ),
+		'id' => 'wpboot_content_font',
+		'class' => 'hidden',
+		'std' => array('size' => '13px','face' => '"Open Sans", sans-serif', 'color' => '#333333' ),
+		'type' => 'typography',
+		'options' => array(
+			'sizes' => array( '12','13','14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24' ),
+			'faces' => array(
+				'"Open Sans", sans-serif' => 'Open Sans',
+				'Arial, "Helvetica Neue", Helvetica, sans-serif' => 'Arial',
+				'Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif' => 'Georgia',
+				'Tahoma, Geneva, Verdana, sans-serif' => 'Tahoma',
+				'"Helvetica Neue", Arial, Helvetica, sans-serif' => 'Helvetica',
+				'Verdana, Geneva, sans-serif' => 'Verdana',
+				'Times, "Times New Roman", Georgia, serif' => 'Times New Roman',
+				'"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif' => 'Trebuchet MS',
+				'Cambria, Georgia, serif' => 'Cambria',
+				'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif' => 'Calibri'
+			),
+			'styles' => array( 'normal' => 'Normal', 'bold' => 'Bold' )
+		)
+	);
+
+	$options[] = array( 
+		'name' => __( 'Content heading typography', 'wpboot' ),
+		'desc' => __( 'Select the headline font (h1,h2,h3 etc)', 'wpboot' ),
+		'id' => 'wpboot_heading_font',
+		'class' => 'hidden',
+		'std' => array('size' => '13px','face' => '"Francois One", sans-serif', 'color' => '#333333' ),
+		'type' => 'typography',
+		'options' => array(
+			'sizes' => false,
+			'faces' => array(
+				'"Francois One", sans-serif' => 'Francois Regular',
+				'Arial, "Helvetica Neue", Helvetica, sans-serif' => 'Arial',
+				'Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif' => 'Georgia',
+				'Tahoma, Geneva, Verdana, sans-serif' => 'Tahoma',
+				'"Helvetica Neue", Arial, Helvetica, sans-serif' => 'Helvetica',
+				'Verdana, Geneva, sans-serif' => 'Verdana',
+				'Times, "Times New Roman", Georgia, serif' => 'Times New Roman',
+				'"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif' => 'Trebuchet MS',
+				'Cambria, Georgia, serif' => 'Cambria',
+				'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif' => 'Calibri'
+			),
+			'styles' => array( 'normal' => 'Normal',  'bold' => 'Bold' )
+		)
+	);
+
+	/* ============================== End Typography Settings ================================= */
+
+
+	
 	$options[] = array( "name" => "Theme",
 						"type" => "heading");
 						
@@ -136,3 +271,25 @@ function optionsframework_options() {
 	
 	return $options;
 }
+
+
+/** 
+ * Custom script for theme options
+ *
+ * @since 0.0.1
+ */
+
+add_action('optionsframework_custom_scripts', 'wpboot_custom_scripts' );
+function wpboot_custom_scripts() { ?>
+	<script type='text/javascript'>
+	jQuery(document).ready(function($) {
+
+		$('#wpboot_disable_typography' ).click(function() {
+			$('#section-wpboot_content_font, #section-wpboot_heading_font' ).fadeToggle(400);
+		});
+		
+	});
+	</script>
+<?php
+}
+?>

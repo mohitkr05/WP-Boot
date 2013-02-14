@@ -4,7 +4,7 @@
 * The template is used for displaying footer
 * 
 *		@package wpboot
-*		@since wpboot 0.2
+*		@since wpboot 0.3
 *		@author mohit
 *
 *
@@ -12,7 +12,28 @@
 
 ?>
 
-	</div><!-- #main .site-main -->
+</div><!-- #main .site-main -->
+
+<!--Footer Widgets (4) --->
+<div id="footer-widgets" class="row-fluid">
+	<div class="span3">
+		<?php dynamic_sidebar( 'footer-1' ); ?>
+		</div>
+	<div class="span3">
+				<?php dynamic_sidebar( 'footer-2' ); ?>
+	</div>
+	<div class="span3">
+				<?php dynamic_sidebar( 'footer-3' ); ?>
+	</div>
+	<div class="span3">
+				<?php dynamic_sidebar( 'footer-4' ); ?>
+	</div>
+</div>
+
+
+
+
+<!--footer divisions end ---->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">

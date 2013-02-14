@@ -30,7 +30,7 @@ function wpboot_setup() {
 	
 	
 	/* Sets the theme version number. */
-	define( 'WPBOOT_VERSION', 0.3 );
+	define( 'WPBOOT_VERSION', 0.4 );
 
 	/* Sets the path to the theme directory. */
 	define( 'THEME_DIR', get_template_directory() );
@@ -71,7 +71,7 @@ if ( STYLESHEETPATH == TEMPLATEPATH ) {
 		}
 
 		require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
-
+	
 	}
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
@@ -114,6 +114,16 @@ if ( STYLESHEETPATH == TEMPLATEPATH ) {
 	
 	require(  trailingslashit( WPBOOT_INCLUDES ) . 'theme_options.php' );
 	 
+
+	/**
+	 * 
+	 * Custom functions and profile fields
+	 * 
+	 */
+	 
+	 require(  trailingslashit( WPBOOT_INCLUDES ) . 'custom-functions.php' );
+	 
+	 require(  trailingslashit( WPBOOT_INCLUDES ) . 'profile-fields.php' );
 
 	/**
 	 * Make theme available for translation
@@ -188,6 +198,38 @@ function wpboot_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'wpboot' ),
 		'id' => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer First', 'wpboot' ),
+		'id' => 'footer-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer Second', 'wpboot' ),
+		'id' => 'footer-2',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer Third', 'wpboot' ),
+		'id' => 'footer-3',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer Fourth', 'wpboot' ),
+		'id' => 'footer-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',

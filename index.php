@@ -4,7 +4,7 @@
 * The template is used for <description>
 * 
 *		@package wpboot
-*		@since wpboot 0.2
+*		@since wpboot 0.4
 *		@author mohit
 *
 *
@@ -34,7 +34,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php wpboot_content_nav( 'nav-below' ); ?>
+				<?php wpboot_page_navi(); ?>
 
 			<?php else : ?>
 

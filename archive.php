@@ -27,19 +27,7 @@ get_header(); ?>
 							} elseif ( is_tag() ) {
 								printf( __( 'Tag Archives: %s', 'wpboot' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
-							} elseif ( is_author() ) {
-								/* Queue the first post, that way we know
-								 * what author we're dealing with (if that is the case).
-								*/
-								the_post();
-								printf( __( 'Author Archives: %s', 'wpboot' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
-								/* Since we called the_post() above, we need to
-								 * rewind the loop back to the beginning that way
-								 * we can run the loop properly, in full.
-								 */
-								rewind_posts();
-
-							} elseif ( is_day() ) {
+							}  elseif ( is_day() ) {
 								printf( __( 'Daily Archives: %s', 'wpboot' ), '<span>' . get_the_date() . '</span>' );
 
 							} elseif ( is_month() ) {
@@ -85,7 +73,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php wpboot_content_nav( 'nav-below' ); ?>
+					<?php wpboot_page_navi(); ?>
 
 			<?php else : ?>
 
